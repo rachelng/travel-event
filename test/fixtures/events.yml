@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  artist: MyString
+  venue: MyString
+  location: MyString
+  concert_date: 2014-01-28 22:36:01
+  description: MyText
+  artist_image_url: MyString
+
+two:
+  artist: MyString
+  venue: MyString
+  location: MyString
+  concert_date: 2014-01-28 22:36:01
+  description: MyText
+  artist_image_url: MyString
