@@ -1,6 +1,7 @@
 TravelEvent::Application.routes.draw do
   get "events/index"
   get "events/show"
+  root 'events#index' #/index doesn't work
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

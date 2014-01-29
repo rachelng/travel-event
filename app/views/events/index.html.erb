@@ -1,8 +1,5 @@
-<h1>Events</h1>
-
-	<% @events.each do |event| %>
-		<%= link_to image_tag(event.artist_image_url) %>
-		<h2><%= event.artist %> at <%= event.venue %>, <%= event.location %></h2>
-		<h3><%= formatted_datetime(event.concert_date) %></h3>
-		<p><%= event.description %></p>
-	<% end %>
+<h1>Travel/Events App</h1>
+	<form>
+		<input type="search" value="Enter your destination">
+		<input type="submit" value="Search">
+	</form>
