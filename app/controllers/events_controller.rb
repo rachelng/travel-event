@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   end
 
   def show
-  	@events = Event.all
+  	@events = Event.search(params[:search])
   end
 
 end
