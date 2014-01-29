@@ -5,9 +5,15 @@
   <p>
   	<label for="q">Enter your destination:</label>
     <%= text_field_tag "search[location]", params.has_key?("search") && params[:search].has_key?("location") ? params[:search][:location] : "" %>
+    <br>
 
-    <%= date_field_tag "search[concert_date]", params.has_key?("search") && params[:search].has_key?("concert_date") ? params[:search][:concert_date] : "" %>
+    <label for="q">Departure date:</label>
+    <%= date_field_tag "search[start_date]", params.has_key?("search") && params[:search].has_key?("concert_date") ? params[:search][:concert_date] : "" %>
     
+
+    <label for="q">Return date:</label>
+    <%= date_field_tag "search[end_date]", params.has_key?("search") && params[:search].has_key?("concert_date") ? params[:search][:concert_date] : "" %>
+    <br>
     <%= submit_tag " Search " %>
   </p>
 <% end %>
