@@ -1,0 +1,12 @@
+	<h1>Travel/Events App</h1>
+	<% form_for @event do |f| %>
+		<%= f.text_field "Enter your destination" %><br />
+		From <%= f.text_field :entry_date %> to <input type="date" name="end-date"><br />
+		<%= f.submit "Search" %>
+	<% end %>
+
+	resources: :model, only: [:new, :create]
+	
+	
+	#singular to get rid of the id
+	resource: :profile

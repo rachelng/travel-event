@@ -5,6 +5,8 @@
   <p>
   	<label for="q">Enter your destination:</label>
     <%= text_field_tag "search[location]", params.has_key?("search") && params[:search].has_key?("location") ? params[:search][:location] : "" %>
+
+    <%= date_field_tag "search[concert_date]", params.has_key?("search") && params[:search].has_key?("concert_date") ? params[:search][:concert_date] : "" %>
     
     <%= submit_tag " Search " %>
   </p>
