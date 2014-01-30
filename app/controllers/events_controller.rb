@@ -9,4 +9,8 @@ class EventsController < ApplicationController
   	# @track_id = "81810589"
   end
 
+  def schedule
+  	@schedule_events = Event.where(params[:add_schedule] == '1')
+  end
+
 end

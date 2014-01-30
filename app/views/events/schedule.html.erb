@@ -1,12 +1,10 @@
-<h1>Events</h1>
+<h1>Schedule</h1>
 
-<%= form_tag "/events/schedule", :method => 'put' do %>
-	<% @events.each do |event| %>
+	<% @schedule_events.each do |event| %>
 	<div class="panel panel-default">
 		
 		<div class="panel-heading">
 			<h3 class="panel-title"><%= formatted_datetime(event.concert_date) %></h3>
-			<%= check_box_tag 'add_schedule[]', "1" %>
 		</div>
 		<div class="panel-body">
 			<%= image_tag(event.artist_image_url, class: 'artist-image') %>
@@ -21,8 +19,3 @@
 		
 		</div>
 	<% end %>
-
-	<div class="submit-button">
-        <%= submit_tag " Schedule ", class: "btn btn-info" %>
-    </div>
-<% end %>
