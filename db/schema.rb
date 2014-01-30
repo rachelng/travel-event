@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140128223601) do
+ActiveRecord::Schema.define(version: 20140130001223) do
 
   create_table "events", force: true do |t|
     t.string   "artist"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140128223601) do
     t.string   "artist_image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "track_id"
   end
 
 end

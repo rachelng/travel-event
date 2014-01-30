@@ -6,6 +6,7 @@ class EventsController < ApplicationController
 
   def show
   	@events = Event.search(params[:search])
+  	# @track_id = "81810589"
   end
 
 end
