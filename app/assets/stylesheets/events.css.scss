@@ -21,10 +21,27 @@ body {
 .navbar-default {
 	background-color: #2b2928;
 	border-color: #0e0e0e;
+	.navbar-brand{
+		font-weight:bolder;
+		color: #fff;
+		text-transform: uppercase;
+		&:hover{
+			color: #fff;
+		}
+	}
 }
 
 h1{
 	color: white;
+}
+
+#intro{
+	text-align: center;
+	width: 80%;
+	color: white;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	line-height: 24px;
 }
 
 #search_location {
@@ -99,4 +116,11 @@ h1{
 .soundcloud-player {
 	margin-left: 2%;
 	margin-bottom: 10px;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: #ccc;
+	&:hover{
+		color:#ff5419;
+	}
 }
