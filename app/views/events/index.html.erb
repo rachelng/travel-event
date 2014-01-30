@@ -1,19 +1,21 @@
 <h1>Travel/Events App</h1>
 
+  <div class="jumbotron">
+      <%= form_tag "/events/show", :method => 'get' do %>
+        <div class="form-group">
+          <%= text_field_tag "search[location]", params.has_key?("search") && params[:search].has_key?("location") ? params[:search][:location] : "", placeholder: "Enter your destination...", class: "form-control"  %>
+        </div>
 
-<%= form_tag "/events/show", :method => 'get' do %>
-  <p>
-  	<label for="q">Enter your destination:</label>
-    <%= text_field_tag "search[location]", params.has_key?("search") && params[:search].has_key?("location") ? params[:search][:location] : "" %>
-    <br>
-
-    <label for="q">Departure date:</label>
-    <%= date_field_tag "search[start_date]", params.has_key?("search") && params[:search].has_key?("concert_date") ? params[:search][:concert_date] : "" %>
-    
-
-    <label for="q">Return date:</label>
-    <%= date_field_tag "search[end_date]", params.has_key?("search") && params[:search].has_key?("concert_date") ? params[:search][:concert_date] : "" %>
-    <br>
-    <%= submit_tag " Search " %>
-  </p>
-<% end %>
+        <div class="form-inline">
+          <div class="my-form-arrive">Arrival date:</div>
+           <%= date_field_tag "search[start_date]", params.has_key?("search") && params[:search].has_key?("concert_date") ? params[:search][:concert_date] : "", class: "form-control" %>
+          
+          <div class="my-form-depart">Departure date:</div>
+            <%= date_field_tag "search[end_date]", params.has_key?("search") && params[:search].has_key?("concert_date") ? params[:search][:concert_date] : "", class: "form-control" %>
+        </div>
+        
+          <%= submit_tag " Search ", class: "btn btn-default" %>
+      
+      <% end %>
+    </div>
+  </div>
