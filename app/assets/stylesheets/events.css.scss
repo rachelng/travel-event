@@ -18,6 +18,11 @@ body {
 	z-index: -99;
 }
 
+.navbar-default {
+	background-color: #2b2928;
+	border-color: #0e0e0e;
+}
+
 h1{
 	color: white;
 }
@@ -31,6 +36,9 @@ h1{
 	width: 31.5%;
 	font-size: 18px;
 	height: 100%;
+}
+
+.form-inline {
 	text-align: center;
 }
 
@@ -49,13 +57,45 @@ h1{
 	
 	background-color: rgba(255, 255, 255, 0.9);
 }
-.btn {
+.btn-info {
 	font-size: 30px;
+	margin-top:25px;
+	width: 50%;
+	background-color: #ff5419;
+	border-color: #cf3e0b;
+	&:hover{
+		background-color: #ec4c14;
+		border-color: #cf3e0b;
+	}
+}
+
+.panel {
+	border: 0px;
+	box-shadow: 0 0 10px #000;
+	.panel-title{
+		font-size: 24px;
+	}
+}
+
+.panel-default > .panel-heading {
+	color: #fff;
+	background-color: #ff5419;
+	border-color: #cf3e0b;
 }
 
 .artist-image {
 	height: 200px;
 	width: 200px;
+	float:left;
+	margin-right: 25px;
+	box-shadow: 0 0 5px #ccc;
 }
 
+.submit-button {
+	text-align:center;
+}
 
+.soundcloud-player {
+	margin-left: 2%;
+	margin-bottom: 10px;
+}

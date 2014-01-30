@@ -16,7 +16,9 @@
             <%= date_field_tag "search[end_date]", params.has_key?("search") && params[:search].has_key?("concert_date") ? params[:search][:concert_date] : "", class: "form-control" %>
         </div>
         
+        <div class="submit-button">
           <%= submit_tag " Search ", class: "btn btn-info" %>
+        </div>
       
       <% end %>
     </div>
