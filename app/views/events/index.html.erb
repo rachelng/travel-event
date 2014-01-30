@@ -1,5 +1,7 @@
 <h1>Travel/Events App</h1>
 
+
+
   <div class="jumbotron">
       <%= form_tag "/events/show", :method => 'get' do %>
         <div class="form-group">
@@ -14,7 +16,7 @@
             <%= date_field_tag "search[end_date]", params.has_key?("search") && params[:search].has_key?("concert_date") ? params[:search][:concert_date] : "", class: "form-control" %>
         </div>
         
-          <%= submit_tag " Search ", class: "btn btn-default" %>
+          <%= submit_tag " Search ", class: "btn btn-info" %>
       
       <% end %>
     </div>

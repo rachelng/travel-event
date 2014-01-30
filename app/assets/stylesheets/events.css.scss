@@ -8,6 +8,20 @@ body {
 	padding-top: 70px;
 }
 
+.background {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-width: 100vh;
+	min-height: 100vh;
+	z-index: -99;
+}
+
+h1{
+	color: white;
+}
+
 #search_location {
 	height: 100%;
 	font-size:36px;
@@ -17,6 +31,7 @@ body {
 	width: 31.5%;
 	font-size: 18px;
 	height: 100%;
+	text-align: center;
 }
 
 .my-form-arrive {
@@ -31,5 +46,11 @@ body {
 }
 
 .jumbotron {
-
+	
+	background-color: rgba(255, 255, 255, 0.9);
 }
+.btn {
+	font-size: 30px;
+}
+
+
