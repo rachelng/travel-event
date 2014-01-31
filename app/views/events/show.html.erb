@@ -2,23 +2,23 @@
 
 <%= form_tag "/events/schedule", :method => 'put' do %>
 	<% @events.each do |event| %>
-	<div class="panel panel-default">
-		
-		<div class="panel-heading">
-			<h3 class="panel-title"><%= formatted_datetime(event.concert_date) %></h3>
-			<%= check_box_tag 'add_schedule[]', event.id %>
-		</div>
-		<div class="panel-body">
-			<%= image_tag(event.artist_image_url, class: 'artist-image') %>
-			<div class="event-details">
-				<h2><%= event.artist %></h2>
-				<h3><%= event.venue %>, <%= event.location %></h3>
-				<p><%= event.description %></p>
+		<div class="panel panel-default">
+			
+			<div class="panel-heading">
+				<h3 class="panel-title"><%= formatted_datetime(event.concert_date) %></h3>
+				<%= check_box_tag 'add_schedule[]', event.id %>
 			</div>
-		</div>
+			<div class="panel-body">
+				<%= image_tag(event.artist_image_url, class: 'artist-image') %>
+				<div class="event-details">
+					<h2><%= event.artist %></h2>
+					<h3><%= event.venue %>, <%= event.location %></h3>
+					<p><%= event.description %></p>
+				</div>
+			</div>
 
-		<iframe width="96%" class="soundcloud-player" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<%= event.track_id %>&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe>
-		
+			<iframe width="96%" class="soundcloud-player" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<%= event.track_id %>&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe>
+			
 		</div>
 	<% end %>
 

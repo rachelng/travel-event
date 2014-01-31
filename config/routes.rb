@@ -2,6 +2,7 @@ TravelEvent::Application.routes.draw do
   get "events/index"
   get "events/show"
   put "events/schedule"
+  get "events/email"
 
   # resources :events, only: [:index, :show]
   root 'events#index'

@@ -2,7 +2,7 @@
 
 <%=  params["add_schedule"]%>
 
-	<% @schedule_events.each do |event| %>
+<% @schedule_events.each do |event| %>
 	<div class="panel panel-default">
 		
 		<div class="panel-heading">
@@ -19,5 +19,17 @@
 
 		<iframe width="96%" class="soundcloud-player" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<%= event.track_id %>&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe>
 		
-		</div>
-	<% end %>
+	</div>
+<% end %>
+
+<%= form_tag "/events/email", :method => 'get' do %>
+
+	<%= text_field_tag "email[]", nil, placeholder: "Enter your email...", class: "form-control"  %>
+
+	<div class="submit-button">
+        <%= submit_tag " Schedule ", class: "btn btn-info" %>
+    </div>
+
+<% end %>
+
+

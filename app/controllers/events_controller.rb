@@ -13,4 +13,9 @@ class EventsController < ApplicationController
   	@schedule_events = Event.find(params["add_schedule"])
   end
 
+  def email
+  	ScheduleMailer.schedule_email(params["email"]).deliver
+  	redirect_to "/"
+  end
+
 end
