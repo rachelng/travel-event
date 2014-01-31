@@ -6,7 +6,7 @@
 		
 		<div class="panel-heading">
 			<h3 class="panel-title"><%= formatted_datetime(event.concert_date) %></h3>
-			<%= check_box_tag 'add_schedule[]', "1" %>
+			<%= check_box_tag 'add_schedule[]', event.id %>
 		</div>
 		<div class="panel-body">
 			<%= image_tag(event.artist_image_url, class: 'artist-image') %>

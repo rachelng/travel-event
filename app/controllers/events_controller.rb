@@ -10,7 +10,7 @@ class EventsController < ApplicationController
   end
 
   def schedule
-  	@schedule_events = Event.where(params[:add_schedule] == '1')
+  	@schedule_events = Event.find(params["add_schedule"])
   end
 
 end
