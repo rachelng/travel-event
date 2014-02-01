@@ -7,10 +7,10 @@
     <h1>Schedule</h1>
 
     <% @events.each do |event| %>
-      <h2><%= event.concert_date %></h2>
+      <hr>
+      <h2><%= formatted_datetime(event.concert_date) %>
   		<h3><%= event.artist %> at <%= event.venue %>, <%= event.location %></h3>
   		<p><%= event.description %></p>
-      <hr>
     <% end %>
 
   </body>

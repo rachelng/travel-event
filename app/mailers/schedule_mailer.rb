@@ -1,5 +1,7 @@
 class ScheduleMailer < ActionMailer::Base
 
+	helper EventsHelper
+
 	def schedule_email(email, events)
 		@events = events
 		body = render_to_string("schedule_email")

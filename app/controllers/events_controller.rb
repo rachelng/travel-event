@@ -14,16 +14,26 @@ class EventsController < ApplicationController
   end
 
   def schedule
-  	@schedule_events = Event.find(params["add_schedule"])
+    @schedule_events = parse_add_schedule(params)  
   end
 
   def email
+    @schedule_events = parse_add_schedule(params)
 
-    ids = params["add_schedule"].split(',')
-    events = Event.find(ids)
-    
-  	ScheduleMailer.schedule_email(params["email"], events).deliver
+  	ScheduleMailer.schedule_email(params["email"], @schedule_events).deliver
   	redirect_to "/"
   end
+
+  def parse_add_schedule(my_params)
+    if !my_params["add_schedule"].blank?
+      ids = my_params["add_schedule"].split(',')
+      schedule_events = Event.find(ids)
+    else
+      schedule_events = []
+    end
+    logger.debug(schedule_events)
+    schedule_events
+  end
+
 
 end
