@@ -2,11 +2,15 @@ class EventsController < ApplicationController
 
   def index
   	@events = Event.all
+    # if params[:search] && !params[:search].present?
+    #   return
+    # else
+    #   flash.now[:notice] = "Error!"
+    # end
   end
 
   def show
-  	@events = Event.search(params[:search])
-  	# @track_id = "81810589"
+    @events = Event.search(params[:search])
   end
 
   def schedule
@@ -14,7 +18,11 @@ class EventsController < ApplicationController
   end
 
   def email
-  	ScheduleMailer.schedule_email(params["email"]).deliver
+
+    ids = params["add_schedule"].split(',')
+    events = Event.find(ids)
+    
+  	ScheduleMailer.schedule_email(params["email"], events).deliver
   	redirect_to "/"
   end
 

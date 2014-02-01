@@ -1,6 +1,6 @@
 <h1>Schedule</h1>
 
-<%=  params["add_schedule"]%>
+<%= params["add_schedule"]%>
 
 <% @schedule_events.each do |event| %>
 	<div class="panel panel-default">
@@ -25,6 +25,7 @@
 <%= form_tag "/events/email", :method => 'get' do %>
 
 	<%= text_field_tag "email[]", nil, placeholder: "Enter your email...", class: "form-control"  %>
+	<%= hidden_field_tag "add_schedule", params['add_schedule'].join(',') %>
 
 	<div class="submit-button">
         <%= submit_tag " Schedule ", class: "btn btn-info" %>

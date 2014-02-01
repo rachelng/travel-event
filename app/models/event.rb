@@ -1,5 +1,7 @@
 class Event < ActiveRecord::Base
 
+	# validate :destination_is_present, on: :index
+
 	def self.search(options)
 		start_day = options[:start_date].to_date.beginning_of_day
 		final_day = options[:end_date].to_date.end_of_day
@@ -11,5 +13,10 @@ class Event < ActiveRecord::Base
 	    find(:all)
 	  end
 	end	
+
+	protected
+
+
+
 
 end
