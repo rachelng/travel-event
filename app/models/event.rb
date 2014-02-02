@@ -16,7 +16,4 @@ class Event < ActiveRecord::Base
 
 	protected
 
-
-
-
 end

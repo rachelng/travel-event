@@ -6,22 +6,25 @@
 
 <div class="jumbotron">
     <%= form_tag "/events/show", :method => 'get' do %>
-      <div class="form-group">
-        <%= text_field_tag "search[location]", params.has_key?("search") && params[:search].has_key?("location") ? params[:search][:location] : "", placeholder: "Enter your destination...", class: "form-control"  %>
-      </div>
+        <div class="form-group">
+            <%= text_field_tag "search[location]", params.has_key?("search") && params[:search].has_key?("location") ? params[:search][:location] : "", placeholder: "Enter your destination...", class: "form-control"  %>
+        </div>
 
-      <div class="form-inline">
-        <div class="my-form-arrive">Arrival date:</div>
-         <%= date_field_tag "search[start_date]", params.has_key?("search") && params[:search].has_key?("concert_date") ? params[:search][:concert_date] : "", class: "form-control" %>
+        <div class="form-inline">
+            
+            <div class="my-form-arrive">Arrival date:</div>
+            
+            <%= date_field_tag "search[start_date]", params.has_key?("search") && params[:search].has_key?("concert_date") ? params[:search][:concert_date] : "", class: "form-control" %>
         
-        <div class="my-form-depart">Departure date:</div>
-          <%= date_field_tag "search[end_date]", params.has_key?("search") && params[:search].has_key?("concert_date") ? params[:search][:concert_date] : "", class: "form-control" %>
-      </div>
+            <div class="my-form-depart">Departure date:</div>
+            
+            <%= date_field_tag "search[end_date]", params.has_key?("search") && params[:search].has_key?("concert_date") ? params[:search][:concert_date] : "", class: "form-control" %>
+        </div>
       
-      <div class="submit-button">
-        <%= submit_tag " Search ", class: "btn btn-info" %>
-      </div>
-    
+        <div class="submit-button">
+           <%= submit_tag " Search ", class: "btn btn-info" %>
+        </div>
+       
     <% end %>
-  </div>
+      
 </div>

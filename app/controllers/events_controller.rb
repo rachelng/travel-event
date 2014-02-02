@@ -19,7 +19,6 @@ class EventsController < ApplicationController
 
   def email
     @schedule_events = parse_add_schedule(params)
-
   	ScheduleMailer.schedule_email(params["email"], @schedule_events).deliver
   	redirect_to "/"
   end
@@ -34,6 +33,5 @@ class EventsController < ApplicationController
     logger.debug(schedule_events)
     schedule_events
   end
-
-
+  
 end

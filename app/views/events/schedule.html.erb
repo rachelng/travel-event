@@ -15,28 +15,18 @@
 			</div>
 		</div>
 
-		<iframe width="96%" class="soundcloud-player" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<%= event.track_id %>&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe>
-		
+		<iframe width="96%" class="soundcloud-player" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<%= event.track_id %>&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe>	
 	</div>
 <% end %>
 	
-
 	<div class="panel panel-default">
 		<div class="panel-body">
-				<%= form_tag "/events/email", class: "form-inline", :method => 'get' do %>
-					<%= hidden_field_tag "add_schedule", 
-						(@schedule_events.map do |event| 
-							event.id
-						end).join(',') 
-							%>
-					<%= text_field_tag "email[]", nil, placeholder: "Enter your email...", class: "form-control"  %>
-
-
-			    <%= submit_tag " Email Schedule ", class: "btn btn-default" %>
-
+			<%= form_tag "/events/email", class: "form-inline", :method => 'get' do %>
+			<%= hidden_field_tag "add_schedule", (@schedule_events.map do |event| event.id end).join(',') %>
+			<%= text_field_tag "email[]", nil, placeholder: "Enter your email...", class: "form-control"  %>
+			<%= submit_tag " Email Schedule ", class: "btn btn-default" %>
 		</div>
 	</div>
-
 <% end %>
 
 

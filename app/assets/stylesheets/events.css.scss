@@ -148,7 +148,25 @@ h1{
 	}
 }
 
+#email_ {
+	width: 85%;
+}
 
+.btn-default {
+	float: right;
+	color: white;
+	background-color: #ff5419;
+	border-color: #cf3e0b;
+	&:hover{
+		background-color: #ec4c14;
+		border-color: #cf3e0b;
+		color: white;
+	}
+	&:focus{
+		background-color: #ec4c14;
+		border-color: #cf3e0b;
+	}
+}
 
 
 
