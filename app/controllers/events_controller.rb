@@ -3,14 +3,10 @@ class EventsController < ApplicationController
   def index
   	@events = Event.all
 
-    # if params[:search] && !params[:search].present?
-    #   return
-    # else
-    #   flash.now[:notice] = "Error!"
-    # end
   end
 
   def show
+   
     @events = Event.search(params[:search])
   end
 

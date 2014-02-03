@@ -4,16 +4,16 @@ class Event < ActiveRecord::Base
 
 	def self.search(options)
 		
-
-	  if options[:location].present?
+	  if options[:location].present? && options[:start_date].present? && options[:end_date].present?
 		start_day = options[:start_date].to_date.beginning_of_day
 		final_day = options[:end_date].to_date.end_of_day
 		location = options[:location].downcase.titleize
-
 	    find(:all, :conditions =>["location = ? AND concert_date >= ? AND concert_date <= ?", location, start_day, final_day]) 
-	  else
-	    find(:all)
+
+	  	else
+	  	find(:all)
 	  end
+
 	end	
 
 	protected
