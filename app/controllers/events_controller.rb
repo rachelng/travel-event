@@ -2,6 +2,7 @@ class EventsController < ApplicationController
 
   def index
   	@events = Event.all
+
     # if params[:search] && !params[:search].present?
     #   return
     # else
@@ -33,5 +34,5 @@ class EventsController < ApplicationController
     logger.debug(schedule_events)
     schedule_events
   end
-  
+
 end
