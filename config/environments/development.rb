@@ -7,7 +7,7 @@ TravelEvent::Application.configure do
     :user_name => "traveleventsapp@gmail.com",
     :password  => "y_ClnYXLJMu6JfzKlLEDew", # SMTP password is any valid API key
     :authentication => 'login', # Mandrill supports 'plain' or 'login'
-    :domain => 'you@yourdomain.com', # your domain to identify your server when connecting
+    :domain => 'http://guarded-gorge-9342.herokuapp.com', # your domain to identify your server when connecting
   }
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
